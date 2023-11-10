@@ -1,32 +1,32 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { Container } from "react-bootstrap";
+import NavBar from './components/NavBar'
+import Announcements from './pages/Announcements'
+import Calender from './pages/Calender'
+import Courses from './pages/Courses'
+import UserProfile from './pages/UserProfile'
+import Dashboard from './pages/Dashboard'
+import {BrowserRouter as Router, Routes,Route,Navigate,} from "react-router-dom";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <NavBar />
+        <Container className="my-3">
+          <Router>
+            <Routes>
+              <Route index element={<Dashboard />} />
+              <Route path="/user" element={<UserProfile />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/announcements" element={<Announcements />} />
+              <Route path="/calender" element={<Calender />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </Router>
+        </Container>
     </div>
   )
 }
