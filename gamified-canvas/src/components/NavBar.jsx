@@ -7,11 +7,9 @@ import courses from '../assets/courses.png';
 import Calander from '../assets/calander.png';
 import userProfile from '../assets/userProfile.png';
 import announcements from "../assets/announcements.png";
-import { Link } from 'react-router-dom';
 const NavBar = () => {
   return (
-    <body>
-    <Navbar bg="light" data-bs-theme="light"  class="navbar-nav nav-fill w-100">
+    <Navbar bg="light" data-bs-theme="light"  className="navbar-nav nav-fill w-100">
       <Container fluid>
         <Navbar.Brand href="/">
           <img
@@ -23,15 +21,14 @@ const NavBar = () => {
         </Navbar.Brand>
         <p className="brand-header">Alterna-Canvas</p>
           <Nav>
-            <Nav.Link href="/"> <img src={dashboard} width="50" height="50"/></Nav.Link>
-            <Nav.Link href="/user"><img src={userProfile} width="50" height="50"/></Nav.Link>
+            <Nav.Link href="/"> <img src={userProfile} width="50" height="50"/></Nav.Link>
+            <Nav.Link href="/dashboard"><img src={dashboard} width="50" height="50"/></Nav.Link>
             <Nav.Link href="/courses"><img src={courses} width="50" height="50"/></Nav.Link>
             <Nav.Link href="/announcements"><img src={announcements} width="50" height="50"/></Nav.Link>
             <Nav.Link href="/calender"><img src={Calander} width="50"height="50" /></Nav.Link>
           </Nav>
       </Container>
     </Navbar>
-    </body>
   );
 }
 

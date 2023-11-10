@@ -15,11 +15,11 @@ function App() {
   return (
     <div className="App">
         <NavBar />
-        <Container className="my-3">
+        <Container >
           <Router>
             <Routes>
-              <Route index element={<Dashboard />} />
-              <Route path="/user" element={<UserProfile />} />
+              <Route index element={<UserProfile />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/courses" element={<Courses />} />
               <Route path="/announcements" element={<Announcements />} />
               <Route path="/calender" element={<Calender />} />
